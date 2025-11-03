@@ -1,5 +1,7 @@
 # Geterdone (an efficient to-do app for Entrepreneurs)
 
+### Built with React + Vite + mongodb + Prisma
+
 ##### Most Todo list give the user anxiety. they are good for listing out what needs to be done but they come with the drawback of becoming a list of stressful things needed to get done and if you dont get them done you feel even more stressed and unproductive They tend to become a place to dumb task into, feeding into procrastiantion on the imortant tasks, making the user feel they have accomplished alot when they have not.  A to-do list should aid in achieving your goals, not be a means of procrastinating & stress.
 
 
