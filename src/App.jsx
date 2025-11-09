@@ -1,5 +1,4 @@
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom'
-import { createContext, useState } from 'react'
 import Home from './components/Home'
 import Login from './components/Login'
 import Signup from './components/Signup'
@@ -8,17 +7,16 @@ import Profile from './components/Profile'
 import Goals from './components/Goals'
 import Journeys from './components/Journeys'
 import Paths from './components/Paths'
-import { AuthContext, UiContext } from './context'
-
+import { AuthContext } from './context/AuthContext'
+import { UiContext } from './context/UiContext'
 
 function App() {
-  const [user, setUser] = useState({});
-  const [ui, setUi] = useState({});
+
 
   return (
-    <AuthContext value={{ user, setUser }}>
-      <UiContext value={{ ui, setUi }}>
-        <Router> <Router>
+    <AuthContext>
+      <UiContext>
+        <Router>
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/login" element={<Login />} />
@@ -31,7 +29,7 @@ function App() {
               <Route path="paths" element={<Paths />} />
             </Route>
           </Routes>
-        </Router></Router>
+        </Router>
       </UiContext>
     </AuthContext>
 

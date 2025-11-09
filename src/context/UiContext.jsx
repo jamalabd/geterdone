@@ -1,14 +1,16 @@
 import { createContext } from 'react'
 
-export const UiContext = createContext();
+const UiContext = createContext();
 
-export const UiProvider = ({ children }) => {
-    const { ui, setUi } = useState();
+const UiProvider = ({ children }) => {
+    const { loading, setLoading } = useState(false);
+    const { toast, setToast } = useState([]);
+
     return (
-        <UiContext value={{ ui, setUi }}>
+        <UiContext value={{ loading, setLoading, toast, setToast }}>
             {children}
         </UiContext>
     )
 }
 
-export { UiContext };
+export { UiContext, UiProvider };
