@@ -1,4 +1,7 @@
 import mongoose from 'mongoose';
+import { goalSchema } from './goal.js'
+import { pathSchema } from './path.js'
+import { notificationSchema } from './notification.js'
 
 const userSchema = new mongoose.Schema({
 
@@ -10,9 +13,11 @@ const userSchema = new mongoose.Schema({
   password: {
     type: String,
     required: true,
-  }
+  },
+  goals: goalSchema,
+  paths: pathSchema,
+  notifications: notificationSchema,
 }
 );
 
-const User = mongoose.model('User', userSchema);
-export default User;
+export const User = mongoose.model('User', userSchema);
