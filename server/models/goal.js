@@ -29,13 +29,14 @@ const goalSchema = new mongoose.Schema({
         required: true,
     },
     steps: [stepSchema],
+    tags: [String],
     createdAt: {
         type: Date,
-        default: Date.now,
+        default: ()=> Date.now(),
     },
     updatedAt: {
         type: Date,
-        default: Date.now,
+        default: ()=> Date.now(),
     }, completedAt:{
         type: Date,
         default: null,

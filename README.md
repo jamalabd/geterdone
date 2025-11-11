@@ -27,3 +27,38 @@
     - You complete a goal, you can then name the path.
 
 ![alt](https://excalidraw.com/#json=oUBzf2HlToVc8nRTZxPSr,8_6YT-FSlYb92CqE73wHiQ)
+
+## Why React + Vite
+I chose React primarily because I have been developing in React since the start of my career, so I chose it mainly out of comfort. However, the declarative nature of React also makes component composition intuitive, allowing for greater clarity of thought when developing. I chose Vite because it's currently the industry standard, and it pairs well with React Router, which I am using to handle routing in my application.
+
+## Why Node + Express 
+I chose Node because I wanted my back end to also be in JavaScript, reducing the headache of having a different language for the backend. Express pairs very well with Node.js, extending its functionality while also simplifying some of its features.
+
+## why MongoDB + Mongoos
+I chose MongoDB out of preference for non-relational databases. I chose Mongoos over Prisma for its being designed to be used with MongoDB and the fact that it has been around for a long time, making finding articles and resources easier. 
+
+
+## Folder structure 
+public/, server/, and src/.
+
+public/ vite.svg
+
+server/  config/ (config.js, database.js), controllers/, middleware/, models/ (goal.js, notification.js, path.js, user.js), routes/ (auth.js, goals.js, health.js, index.js, users.js), and server.js.
+
+src/ contains App.css, App.jsx, main.css, main.jsx, assets/react.svg, context/ (AuthContext.jsx, UiContext.jsx), and components/ (Goals.jsx, Home.jsx, Journeys.jsx, Login.jsx, Paths.jsx, Profile.jsx, ProtectedRoute.jsx, Signup.jsx).
+
+## MVP scope
+-  user account
+-  add the goal
+-  list out each step to achieve that 
+-  notification remindeds
+-  notification for completing goals
+-  see the past completed goals
+-  able to CRUD incomleted goals.
+
+## Future features (v2 ideas)
+-  Goal leader boards 
+-  Points for completing goals
+-  Sharable paths & goals 
+-  Goal colaberations (work with others to comlete steps in a goal)
+-  Goal groups (goups of user with a similar goal in mind)
