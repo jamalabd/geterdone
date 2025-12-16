@@ -1,11 +1,15 @@
 import mongoose from 'mongoose';
 
-const pathSchema = new mongoose.Schema({
+export const pathSchema = new mongoose.Schema({
     path: {
         type: String,
         required: true,
     },
-    goals: [goalSchema]
+    goalId: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Goal',
+        required: true,
+    }
 })
 
 

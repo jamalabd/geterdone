@@ -23,28 +23,37 @@ const stepSchema = new mongoose.Schema({
     },
 });
 
-const goalSchema = new mongoose.Schema({
+export const goalSchema = new mongoose.Schema({
     goal: {
         type: String,
+        required: true,
+    },
+    user: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'User',
         required: true,
     },
     steps: [stepSchema],
     tags: [String],
     createdAt: {
         type: Date,
-        default: ()=> Date.now(),
+        default: Date.now,
     },
-    updatedAt: {
-        type: Date,
-        default: ()=> Date.now(),
-    }, completedAt:{
-        type: Date,
-        default: null,
-    },
-     completed: {
+    updatedAt: Date,
+    completedAt: Date,
+    completed: {
         type: Boolean,
         default: false,
     },
+
 });
 
-const Goal = mongoose.model('Goal', goalSchema);
+goalSchema.pre('save', function(next){
+        this.updatedAt = Date.now();
+        if(this.isModified('completed') && this.completed === true && !this.completedAt){
+            this.completedAt = Date.now();
+        }
+        next();
+    });
+
+export const Goal = mongoose.model('Goal', goalSchema);

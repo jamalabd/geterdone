@@ -1,8 +1,8 @@
 import mongoose from 'mongoose';
 
-const notificationSchema = new mongoose.Schema({
+export const notificationSchema = new mongoose.Schema({
     notification: {
-        type: string, 
+        type: String, 
         required: true,
     },
     emoji: {
@@ -10,12 +10,13 @@ const notificationSchema = new mongoose.Schema({
         required: true,
     },
     goalId: {
-        type: String,
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Goal',
         required: true,
     },
     createdAt: {
         type: Date,
-        default: ()=> Date.now(),
+        default: Date.now,
     }
 });
 
